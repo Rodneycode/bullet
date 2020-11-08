@@ -61,28 +61,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     controller.moveSprite(mySprite)
     console.log("create character and start game")
 })
+let projectile4: Sprite = null
+let projectile3: Sprite = null
+let projectile2: Sprite = null
 let projectile: Sprite = null
 let mySprite: Sprite = null
 let textSprite: TextSprite = null
 effects.clouds.startScreenEffect()
-tiles.setTilemap(tiles.createTilemap(hex`100010000802090202020202020202090202020a070101010101010101010101010101030701010101010101010101010101010307010101010101010101010101010103070101010101010101010101010101030701010101010101010101010101010307010101010101010101010101010103070101010101010101010101010101030701010101010101010101010101010307010101010101010101010101010103070101010101010101010101010101030701010101010101010101010101010307010101010101010101010101010103070101010101010101010101010101030701010101010101010101010101010306050505050505050505050505050504`, img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, [myTiles.transparency16,sprites.dungeon.darkGroundCenter,sprites.dungeon.purpleOuterNorth1,sprites.dungeon.purpleOuterEast0,sprites.dungeon.purpleOuterSouthWest,sprites.dungeon.purpleOuterSouth1,sprites.dungeon.purpleOuterSouthEast,sprites.dungeon.purpleOuterWest1,sprites.dungeon.purpleOuterNorthWest,sprites.dungeon.purpleOuterNorth2,sprites.dungeon.purpleOuterNorthEast], TileScale.Sixteen))
+tiles.setTilemap(tilemap`level`)
 textSprite = textsprite.create("JAMS")
 music.magicWand.play()
 textSprite.setMaxFontHeight(20)
@@ -105,3 +91,79 @@ mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
+let mySprite2 = sprites.create(img`
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 
+    `, SpriteKind.Enemy)
+mySprite2.setPosition(130, 95)
+forever(function () {
+    projectile2 = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . 
+        . . . d d d d d d d d d . . . 
+        . . . d d d d d d d d d . . . 
+        . . . d d d d d d d d d . . . 
+        . . . d d d d d d d d d . . . 
+        . . . d d d d d d d d d . . . 
+        . . . d d d d d d d d d . . . 
+        . . . . d d d d d d d . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . 
+        `, mySprite2, 50, 50)
+    projectile3 = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . d d d d d d d . . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . . d d d d d d d . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, mySprite2, -50, 50)
+    projectile4 = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . d d d d d d d . . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . d d d d d d d d d . . . . 
+        . . . . d d d d d d d . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, mySprite2, -50, -50)
+    pause(2000)
+})

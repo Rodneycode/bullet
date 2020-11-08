@@ -4,6 +4,24 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "level": {
+        "id": "level",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxMDAwMTAwMDA4MDIwOTAyMDIwMjAyMDIwMjAyMDIwOTAyMDIwMjBhMDcwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDMwNzAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzA3MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAzMDcwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDMwNzAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzA3MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAzMDcwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDMwNzAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzA3MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAzMDcwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDMwNzAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzA3MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAzMDcwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDMwNzAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMzA2MDUwNTA1MDUwNTA1MDUwNTA1MDUwNTA1MDUwNTA0MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.dungeon.darkGroundCenter",
+            "sprites.dungeon.purpleOuterNorth1",
+            "sprites.dungeon.purpleOuterEast0",
+            "sprites.dungeon.purpleOuterSouthWest",
+            "sprites.dungeon.purpleOuterSouth1",
+            "sprites.dungeon.purpleOuterSouthEast",
+            "sprites.dungeon.purpleOuterWest1",
+            "sprites.dungeon.purpleOuterNorthWest",
+            "sprites.dungeon.purpleOuterNorth2",
+            "sprites.dungeon.purpleOuterNorthEast"
+        ]
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
