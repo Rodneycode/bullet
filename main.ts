@@ -1,0 +1,5 @@
+effects.clouds.startScreenEffect()
+let textSprite = textsprite.create("JAMS")
+music.magicWand.play()
+textSprite.setMaxFontHeight(20)
+scene.cameraFollowSprite(textSprite)
